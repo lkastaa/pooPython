@@ -1,3 +1,5 @@
+import random
+
 class Personagem:
   def __init__(self, nome, vida, nivel):
     self.__nome = nome
@@ -22,7 +24,7 @@ class Personagem:
       self.__vida = 0
 
   def atacar(self, alvo):
-    dano = self.__nivel * 2
+    dano = random.randint(0, self.get_nivel()) * 2
     alvo.receber_ataque(dano)
     print(f"{self.get_nome()} deu {dano} de dano!")
   
